@@ -1,0 +1,32 @@
+@page "/bulkupload"
+@using DFN_Sales2_web.Models
+@using System.Text.RegularExpressions
+
+<PageTitle>Bulk Upload</PageTitle>
+
+<InputFile OnChange="@OnInputFileChange" class="btn btn-primary"></InputFile>
+
+<h1>벌크 업로드 기능은 현재 개발 중입니다.</h1>
+@code {
+
+    SalesInfo _salesInfo;
+    int no;
+
+    public async Task OnInputFileChange(InputFileChangeEventArgs eventArgs)
+    {
+        var file = eventArgs.File;
+
+        Regex regex = new Regex(".+\\.csv", RegexOptions.Compiled);
+
+        if (!regex.IsMatch(file.Name))
+        {
+            
+        }
+        else
+        {
+            var stream = file.OpenReadStream();
+            
+        }
+    }
+
+}
